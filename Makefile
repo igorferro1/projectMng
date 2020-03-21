@@ -9,8 +9,8 @@ CXXFLAGS = -Wall -pedantic -g -std=c++11
 # ****************************************************
 # Targets needed to bring the executable up to date
 
-main: main.o Pessoa.o Atividade.o Projeto.o
-	$(CXX) $(CXXFLAGS) -o main main.o Pessoa.o Atividade.o Projeto.o
+main: main.o Recurso.o Pessoa.o Ferramenta.o Atividade.o AtividadeDeEsforcoFixo.o AtividadeDePrazoFixo.o ErroDeArquivo.o Projeto.o PersistenciaDeProjeto.o
+	$(CXX) $(CXXFLAGS) -o main main.o Recurso.o Pessoa.o Ferramenta.o Atividade.o AtividadeDeEsforcoFixo.o AtividadeDePrazoFixo.o ErroDeArquivo.o Projeto.o PersistenciaDeProjeto.o
 
 # The main.o target can be written more simply
 
