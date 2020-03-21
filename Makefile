@@ -14,11 +14,23 @@ main: main.o Pessoa.o Atividade.o Projeto.o
 
 # The main.o target can be written more simply
 
-main.o: main.cpp Pessoa.h Atividade.h Projeto.h
+main.o: main.cpp Recurso.h Pessoa.h Ferramenta.h Atividade.h AtividadeDeEsforcoFixo.h AtividadeDePrazoFixo.h ErroDeArquivo.h Projeto.h PersistenciaDeProjeto.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
 
-Pessoa.o: Pessoa.h
+Recurso.o: Recurso.h
 
-Atividade.o: Atividade.h Pessoa.h
+Pessoa.o: Pessoa.h Recurso.h
 
-Projeto.o: Projeto.h Atividade.h Pessoa.h
+Ferramenta.o: Ferramenta.h Recurso.h
+
+Atividade.o: Atividade.h Pessoa.h Recurso.h
+
+AtividadeDeEsforcoFixo.o: AtividadeDeEsforcoFixo.h Atividade.h 
+ 
+AtividadeDePrazoFixo.o: AtividadeDePrazoFixo.h Atividade.h 
+
+ErroDeArquivo.o: ErroDeArquivo.h
+
+Projeto.o: Projeto.h Atividade.h Recurso.h
+
+PersistenciaDeProjeto.o: PersistenciaDeProjeto.h Projeto.h AtividadeDeEsforcoFixo.h AtividadeDePrazoFixo.h Atividade.h Pessoa.h Ferramenta.h Recurso.h ErroDeArquivo.h
